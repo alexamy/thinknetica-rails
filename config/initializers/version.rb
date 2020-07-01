@@ -1,3 +1,5 @@
-module TestGuru
-  APP_VERSION = '0.1.0'
+class << TestGuru
+  def version
+    '0.1.0'
+  end
 end
