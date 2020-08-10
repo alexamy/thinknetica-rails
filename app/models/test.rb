@@ -4,7 +4,10 @@ class Test < ApplicationRecord
   has_many :users, :through => :user_tests
 
   def self.by_category(category_name)
-    category = Category.find_by(name: category_name)
-    Test.where(category: category).order("title DESC")
+    Test
+      .joins(:category)
+      .where(categories: { name: category_name })
+      .order("title DESC")
+      .pluck(:title)
   end
 end
