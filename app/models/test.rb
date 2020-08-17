@@ -9,11 +9,10 @@ class Test < ApplicationRecord
   scope :normal, -> { where(level: 2..4) }
   scope :hard,   -> { where(level: 5..)  }
 
-  def self.by_category(category_name)
-    Test
-      .joins(:category)
-      .where(categories: { name: category_name })
-      .order("title DESC")
-      .pluck(:title)
+  scope :by_category, -> category_name do
+    joins(:category)
+    .where(categories: { name: category_name })
+    .order("title DESC")
+    .pluck(:title)
   end
 end
