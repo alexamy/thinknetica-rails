@@ -13,9 +13,10 @@ class Test < ApplicationRecord
   scope :hard,   -> { where(level: 5..)  }
 
   scope :by_category, -> category_name do
-    joins(:category)
-    .where(categories: { name: category_name })
-    .order("title DESC")
-    .pluck(:title)
+    joins(:category).where(categories: { name: category_name })
+  end
+
+  def self.titles_by_category(category_name)
+    by_category(category_name).order("title DESC").pluck(:title)
   end
 end
