@@ -12,6 +12,7 @@ module TestGuru
     config.load_defaults 6.0
 
     config.time_zone = 'Europe/Moscow'
+    config.i18n.available_locales = :ru
     config.i18n.default_locale = :ru
 
     # Settings in config/environments/* take precedence over those specified here.
