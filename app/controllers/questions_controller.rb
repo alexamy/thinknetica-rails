@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render plain: Question.find(params[:id]).to_json
+    @question = Question.find(params[:id])
   end
 
   def new
@@ -17,6 +17,10 @@ class QuestionsController < ApplicationController
     question = Question.create(question_params)
 
     render plain: question.inspect
+  end
+
+  def destroy
+    Question.find(params[:id]).destroy
   end
 
   private
