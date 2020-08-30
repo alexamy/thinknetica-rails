@@ -16,18 +16,13 @@ class QuestionsController < ApplicationController
   def create
     question = Question.new(question_params)
 
-    answers = params[:question][:answers].map do |answer|
-      next if answer.empty?
+    answer_bodies = params[:question][:answers].reject(&:empty?)
+    question.answers = answer_bodies.map do |answer|
       Answer.new(body: answer, question: question)
     end
 
-    answers.compact!
-
-    question.test = @test
-    question.answers = answers
-
     question.save
-    answers.each { |answer| answer.save }
+    question.answers.each { |answer| answer.save }
 
     render plain: question.persisted? ? 'Success' : 'Fail'
   end
@@ -40,7 +35,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:body).merge(test: @test)
   end
 
   def find_test
