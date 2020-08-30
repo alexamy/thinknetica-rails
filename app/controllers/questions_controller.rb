@@ -14,14 +14,27 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.create(question_params)
+    question = Question.new(question_params)
 
-    render plain: question.inspect
+    answers = params[:question][:answers].map do |answer|
+      next if answer.empty?
+      Answer.new(body: answer, question: question)
+    end
+
+    answers.compact!
+
+    question.test = @test
+    question.answers = answers
+
+    question.save
+    answers.each { |answer| answer.save }
+
+    render plain: question.persisted? ? 'Success' : 'Fail'
   end
 
   def destroy
     Question.find(params[:id]).destroy
-    render plain: "Deleted!"
+    render plain: "Success"
   end
 
   private
