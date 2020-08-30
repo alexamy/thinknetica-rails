@@ -2,6 +2,8 @@ class QuestionsController < ApplicationController
   before_action :find_test
   before_action :scope_questions
 
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
+
   def index
     render plain: @questions.to_json
   end
@@ -33,6 +35,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def rescue_with_not_found
+    render plain: 'Question not found'
+  end
 
   def question_params
     params.require(:question).permit(:body).merge(test: @test)
