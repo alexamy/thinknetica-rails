@@ -12,11 +12,11 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    @question = Question.new
   end
 
   def create
     question = Question.create(question_params)
-
 
     render plain: question.persisted? ? 'Success' : 'Fail'
   end
