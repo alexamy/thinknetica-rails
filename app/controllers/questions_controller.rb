@@ -1,12 +1,11 @@
 class QuestionsController < ApplicationController
   before_action :find_test
-  before_action :scope_questions
   before_action :find_question, only: %i[show]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
   def index
-    render plain: @questions.to_json
+    render plain: Question.all.to_json
   end
 
   def show
@@ -30,7 +29,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    Question.find(params[:id]).destroy
+    @question.destroy
     render plain: "Success"
   end
 
@@ -50,9 +49,5 @@ class QuestionsController < ApplicationController
 
   def find_question
     @question = Question.find(params[:id])
-  end
-
-  def scope_questions
-    @questions = @test ? @test.questions : Question.all
   end
 end
