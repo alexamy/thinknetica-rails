@@ -1,11 +1,11 @@
 class QuestionsController < ApplicationController
   before_action :find_test
-  before_action :find_question, only: %i[show]
+  before_action :find_question, only: %i[show destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
   def index
-    render plain: Question.all.to_json
+    render plain: @test.questions.to_json
   end
 
   def show
