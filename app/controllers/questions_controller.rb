@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :find_test
   before_action :scope_questions
+  before_action :find_question, only: %i[show]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found
 
@@ -9,7 +10,6 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
   end
 
   def new
@@ -46,6 +46,10 @@ class QuestionsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:test_id]) if params[:test_id]
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 
   def scope_questions
