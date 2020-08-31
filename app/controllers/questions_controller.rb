@@ -15,15 +15,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(question_params)
+    question = Question.create(question_params)
 
-    answer_bodies = params[:question][:answers].reject(&:empty?)
-    question.answers = answer_bodies.map do |answer|
-      Answer.new(body: answer, question: question)
-    end
-
-    question.save
-    question.answers.each { |answer| answer.save }
 
     render plain: question.persisted? ? 'Success' : 'Fail'
   end
