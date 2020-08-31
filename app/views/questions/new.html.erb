@@ -1,5 +1,13 @@
 <h1>Create new question</h1>
 
+<% if @question.errors.any? %>
+  <% @question.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+<br>
+
 <%= form_with model: [@test, @question], local: true do |f| %>
   <%= f.label :body, "Body" %>
   <%= f.text_field :body %><br><br>

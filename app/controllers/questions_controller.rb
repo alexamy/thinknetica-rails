@@ -16,9 +16,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.create(question_params)
+    @question = Question.new(question_params)
 
-    render plain: question.persisted? ? 'Success' : 'Fail'
+    if @question.save
+      redirect_to action: 'index'
+    else
+      render 'new'
+    end
   end
 
   def destroy
