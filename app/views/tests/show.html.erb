@@ -2,6 +2,13 @@
 <p>Уровень: <%= @test.level %></p>
 
 <p>Вопросы:</p>
-<ul>
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th>Действия</th>
+  </tr>
   <%= render @test.questions %>
-</ul>
+</table>
+<br>
+
+<%= link_to 'К списку тестов', tests_path %>
