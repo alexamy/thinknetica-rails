@@ -12,11 +12,11 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.build
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = @test.questions.build(question_params)
 
     if @question.save
       redirect_to action: 'index'
@@ -37,7 +37,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body).merge(test: @test)
+    params.require(:question).permit(:body)
   end
 
   def find_test
