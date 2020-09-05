@@ -1,0 +1,8 @@
+<h1><%= @test.title %></h1>
+<p>Уровень: <%= @test.level %></p>
+<p>Категория: <%= @test.category.name %></p>
+
+<p>Вопросы:</p>
+<ul>
+  <%= render @test.questions %>
+</ul>
