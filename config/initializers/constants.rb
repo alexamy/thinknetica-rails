@@ -4,6 +4,10 @@ class AppInfo
       "TestGuru"
     end
 
+    def ProjectDescription
+      "Test framework for students and teachers"
+    end
+
     def Author
       "alexamy"
     end
