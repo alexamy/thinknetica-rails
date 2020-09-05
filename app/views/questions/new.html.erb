@@ -3,8 +3,4 @@
 <%= render 'shared/errors', resource: @question %>
 <br>
 
-<%= form_with model: [@test, @question], local: true do |f| %>
-  <%= f.label :body, "Body" %>
-  <%= f.text_field :body %><br><br>
-  <%= f.submit "Submit" %>
-<% end %>
+<%= render 'form' %>
