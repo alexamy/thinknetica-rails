@@ -1,1 +1,4 @@
-<li><%= question.body %></li>
+<tr>
+  <td><%= question.body %></td>
+  <td><%= link_to 'Показать', question_path(question) %></td>
+</tr>
