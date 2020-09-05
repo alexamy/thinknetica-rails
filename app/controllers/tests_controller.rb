@@ -2,7 +2,7 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[show]
 
   def index
-    render plain: Test.all.to_json
+    @tests = Test.all
   end
 
   def show
