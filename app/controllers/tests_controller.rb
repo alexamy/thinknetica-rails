@@ -1,9 +1,9 @@
 class TestsController < ApplicationController
   def index
-    render plain: Test.all.to_json
+    @tests = Test.all
   end
 
   def show
-    render plain: Test.find(params[:id]).to_json
+    @test = Test.find(params[:id])
   end
 end
