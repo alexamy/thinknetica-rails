@@ -2,13 +2,7 @@
 <p>Уровень: <%= @test.level %></p>
 
 <p>Вопросы:</p>
-<table>
-  <tr>
-    <th>Вопрос</th>
-    <th>Действия</th>
-  </tr>
-  <%= render @test.questions %>
-</table>
+<%= render 'questions/test_questions' %>
 <br>
 
 <%= link_to 'Добавить вопрос', new_test_question_path(@test) %>
