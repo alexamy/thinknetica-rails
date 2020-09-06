@@ -1,12 +1,9 @@
 module QuestionsHelper
-  def form_header
-    case action_name
-    when 'new'
+  def form_header(question)
+    if question.new_record?
       'Создание нового вопроса'
-    when 'edit'
-      'Редактирование вопроса'
     else
-      raise 'Unknown action'
+      'Редактирование вопроса'
     end
   end
 end
