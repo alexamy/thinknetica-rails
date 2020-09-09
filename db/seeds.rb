@@ -6,50 +6,62 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# append question to test with answers
+def create_question(test, question_params, *answer_params)
+  question = Question.new(question_params.merge(test: test))
+  answer_params.each do |params|
+    answer = Answer.new(params)
+    question.answers << answer
+  end
 
+  question.save
+  question.answers.each(&:save)
 
-# Категория Культура
-category = Category.create(name: "Культура")
-
-## Известные личности
-test = Test.create(title: "Известные личности", level: 2, category: category)
-
-question = Question.create(body: "Год рождения А. В. Суворова?", test: test)
-Answer.create(body: "1730", correct: true, question: question)
-
-question = Question.create(body: "Первый роман Ф. М. Достоевского?", test: test)
-Answer.create(body: "Бедные люди", correct: true, question: question)
-
-
-
-# Категория Программирование
-category = Category.create(name: "Программирование")
-
-## Javascript
-test = Test.create(title: "Javascript", level: 1, category: category)
-
-question = Question.create(body: "Является ли Array типом данных?", test: test)
-Answer.create(body: "Нет", correct: true, question: question)
-
-question = Question.create(body: "Позволяет ли объявление переменной словом const её изменение?", test: test)
-Answer.create(body: "Нет", correct: true, question: question)
-
-
-## Haskell
-test = Test.create(title: "Haskell", level: 2, category: category)
-
-question = Question.create(body: "Какой тип свёртки позволяет обрабатывать бесконечные списки?", test: test)
-Answer.create(body: "foldr", correct: true, question: question)
-
-question = Question.create(body: "Какова максимальная арность функций?", test: test)
-Answer.create(body: "1", correct: true, question: question)
-
-
+  question
+end
 
 # Пользователи
 User.create(name: "Jonh Doe", email: "johndoe@example.com", user_type: "student", password_digest: "md5test1")
 User.create(name: "Mike Doe", email: "mikedoe@example.com", user_type: "student", password_digest: "md5test2")
 
 user = User.create(name: "Teresa Doe", email: "teresadoe@example.com", user_type: "teacher", password_digest: "md5test3")
-user.tests << Test.all
-user.save
+
+# Категория Культура
+category = Category.create(name: "Культура")
+
+## Известные личности
+test = Test.create(title: "Известные личности", level: 2, category: category, author: user)
+create_question test,
+  { body: "Год рождения А. В. Суворова?" },
+  { body: "1730", correct: true }
+
+create_question test,
+  { body: "Первый роман Ф. М. Достоевского?" },
+  { body: "Бедные люди", correct: true }
+
+
+# Категория Программирование
+category = Category.create(name: "Программирование")
+
+## Javascript
+test = Test.create(title: "Javascript", level: 1, category: category, author: user)
+
+create_question test,
+  { body: "Является ли Array типом данных?" },
+  { body: "Нет", correct: true }
+
+create_question test,
+  { body: "Позволяет ли объявление переменной словом const её изменение?" },
+  { body: "Нет", correct: true }
+
+
+## Haskell
+test = Test.create(title: "Haskell", level: 2, category: category, author: user)
+
+create_question test,
+  { body: "Какой тип свёртки позволяет обрабатывать бесконечные списки?" },
+  { body: "foldr", correct: true }
+
+create_question test,
+  { body: "Какова максимальная арность функций?" },
+  { body: "1", correct: true }
