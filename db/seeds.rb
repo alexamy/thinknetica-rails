@@ -23,7 +23,6 @@ end
 # Пользователи
 User.create(name: "Jonh Doe", email: "johndoe@example.com", user_type: "student", password_digest: "md5test1")
 User.create(name: "Mike Doe", email: "mikedoe@example.com", user_type: "student", password_digest: "md5test2")
-
 user = User.create(name: "Teresa Doe", email: "teresadoe@example.com", user_type: "teacher", password_digest: "md5test3")
 
 # Категория Культура
