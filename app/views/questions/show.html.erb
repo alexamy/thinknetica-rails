@@ -2,12 +2,12 @@
 
 <p>Ответы:</p>
 
-<table>
-  <tr>
-    <th>Ответ</th>
-  </tr>
+<%= link_to 'Новый ответ', new_question_answer_path(@question) %>
+
+<ol>
   <%= render @question.answers %>
-</table>
+</ol>
 <br>
 
 <%= link_to 'Редактировать', edit_question_path(@question) %>
+<%= link_to 'Назад', test_path(@question.test) %>

@@ -1,0 +1,18 @@
+<h1>Прохождение теста <%= @test_passage.test.title %></h1>
+
+<p>Вопрос # <%= @test_passage.current_question_index + 1 %> / <%= questions_size(@test_passage) %></p>
+
+<b>
+  <%= @test_passage.current_question.body %>
+</b>
+
+<%= form_with url: test_passage_path(@test_passage), method: :put, local: true do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+  <% end %>
+
+  <p><%= form.submit 'Далее' %></p>
+<% end %>
