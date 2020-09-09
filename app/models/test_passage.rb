@@ -10,6 +10,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def current_question_index
+    test.questions.ids.index(current_question.id)
+  end
+
   def success_percent
     percentage = correct_questions / test.questions.size.to_f
     (percentage * 100).to_i

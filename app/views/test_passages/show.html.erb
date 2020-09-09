@@ -1,6 +1,6 @@
 <h1>Прохождение теста <%= @test_passage.test.title %></h1>
 
-<p>Вопрос # <%= current_question_index(@test_passage) %> / <%= questions_size(@test_passage) %></p>
+<p>Вопрос # <%= @test_passage.current_question_index + 1 %> / <%= questions_size(@test_passage) %></p>
 
 <b>
   <%= @test_passage.current_question.body %>
