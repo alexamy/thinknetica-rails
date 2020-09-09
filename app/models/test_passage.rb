@@ -10,6 +10,15 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def success_percent
+    percentage = correct_questions / test.questions.size.to_f
+    (percentage * 100).to_i
+  end
+
+  def successful?
+    success_percent >= 85
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
