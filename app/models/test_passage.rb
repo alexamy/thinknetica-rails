@@ -6,6 +6,8 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
 
+  SUCCESSFUL_PERCENT_MARGIN = 85
+
   def completed?
     current_question.nil?
   end
@@ -20,7 +22,7 @@ class TestPassage < ApplicationRecord
   end
 
   def successful?
-    success_percent >= 85
+    success_percent >= SUCCESSFUL_PERCENT_MARGIN
   end
 
   def accept!(answer_ids)
