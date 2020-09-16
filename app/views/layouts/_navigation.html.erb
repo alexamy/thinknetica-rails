@@ -1,8 +1,13 @@
 <div class="nav">
-  <p class="user">Добро пожаловать, <b><%= current_user&.email %></b></p>
+  <p><%= link_to 'TestGuru', root_path %></p>
+
+  <% if logged_in? %>
+    <p class="user">Добро пожаловать, <b><%= current_user.email %></b></p>
+  <% end %>
+
   <div class="actions">
-    <p class="logout"><%= link_to 'Регистрация', signup_path %></p>
-    <p class="logout"><%= link_to 'Войти', login_path %></p>
-    <p class="logout"><%= link_to 'Выйти', logout_path %></p>
+    <%= link_to 'Регистрация', signup_path %>
+    <%= link_to 'Войти', login_path unless logged_in? %>
+    <%= link_to 'Выйти', logout_path if logged_in? %>
   </div>
 </div>
