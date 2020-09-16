@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
+      cookies[:url] = request.url
       redirect_to login_path, alert: 'Доступ запрещен. Введите email и пароль.'
     end
 
