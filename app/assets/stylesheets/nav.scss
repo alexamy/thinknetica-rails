@@ -1,4 +1,13 @@
-.nav p {
+.nav {
   text-align: right;
-  margin: 0;
+  p {
+    margin: 0;
+  }
+}
+
+.nav .actions {
+  margin-bottom: 5px;
+  p {
+    display: inline;
+  }
 }

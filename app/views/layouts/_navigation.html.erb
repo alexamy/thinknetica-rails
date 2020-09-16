@@ -1,0 +1,8 @@
+<div class="nav">
+  <p class="user">Добро пожаловать, <b><%= current_user&.email %></b></p>
+  <div class="actions">
+    <p class="logout"><%= link_to 'Регистрация', signup_path %></p>
+    <p class="logout"><%= link_to 'Войти', login_path %></p>
+    <p class="logout"><%= link_to 'Выйти', logout_path %></p>
+  </div>
+</div>
