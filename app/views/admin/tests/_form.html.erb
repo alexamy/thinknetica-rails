@@ -1,5 +1,20 @@
-<%= form_with(model: test, local: true) do |form| %>
+<%= form_with(model: [:admin, @test], local: true) do |form| %>
   <%= render 'shared/errors', resource: @test %>
+
+  <div class="actions">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :test_title %>
+  </div>
+
+  <div class="actions">
+    <%= form.label :level %>
+    <%= form.text_field :label, id: :test_label %>
+  </div>
+
+  <div class="actions">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

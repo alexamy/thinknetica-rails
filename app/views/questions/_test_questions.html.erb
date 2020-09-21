@@ -3,5 +3,5 @@
     <th>Вопрос</th>
     <th>Действия</th>
   </tr>
-  <%= render @test.questions %>
+  <%= render partial: 'questions/question', collection: @test.questions %>
 </table>
