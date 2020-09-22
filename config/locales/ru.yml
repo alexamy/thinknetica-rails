@@ -1,5 +1,7 @@
 ru:
   tests:
+    test:
+      start: 'Начать'
     index:
       header: 'Тесты'
       label: 'Название'
