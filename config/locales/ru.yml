@@ -4,7 +4,7 @@ ru:
   tests:
     test:
       start: 'Начать'
-    index:
+    index: &tests-index
       header: 'Тесты'
       label: 'Название'
       level: 'Уровень'
@@ -18,6 +18,9 @@ ru:
         level: 'Уровень'
         add_question: 'Добавить вопрос'
         back_to_tests: 'К списку тестов'
+      index:
+        <<: *tests-index
+        add_new: 'Создать тест'
 
   activerecord:
     errors:
