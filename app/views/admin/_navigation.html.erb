@@ -1,13 +1,13 @@
 <div class="nav">
   <p><%= link_to 'TestGuru', root_path %></p>
 
+  <span class="nav-admin title">Панель управления TestGuru</span>
+
   <% if user_signed_in? %>
-    <p class="user">Добро пожаловать, <b><%= current_user.email %></b></p>
+    <p class="nav-admin user">Добро пожаловать, <b class="nav-admin user-email"><%= current_user.email %></b></p>
   <% end %>
 
   <div class="actions">
-    <%= link_to 'Регистрация', new_user_registration_path %>
-    <%= link_to 'Войти', new_user_session_path unless user_signed_in? %>
     <%= link_to 'Выйти', destroy_user_session_path, method: :delete if user_signed_in? %>
   </div>
 </div>
