@@ -1,0 +1,13 @@
+<p><%= @question.body %></p>
+
+<p>Ответы:</p>
+
+<%= link_to 'Новый ответ', new_admin_question_answer_path(@question) %>
+
+<ol>
+  <%= render @question.answers %>
+</ol>
+<br>
+
+<%= link_to 'Редактировать', edit_admin_question_path(@question) %>
+<%= link_to 'Назад', admin_test_path(@question.test) %>
