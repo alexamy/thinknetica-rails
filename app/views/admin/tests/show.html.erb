@@ -1,10 +1,12 @@
 <h1><%= @test.title %></h1>
-<p>Уровень: <%= @test.level %></p>
+<p>
+  <%= t('.level') %>:
+  <%= @test.level %>
+</p>
 
-<p>Вопросы:</p>
 <%= render 'admin/questions/test_questions' %>
 <br>
 
-<%= link_to 'Добавить вопрос', new_admin_test_question_path(@test) %><br>
+<%= link_to t('.add_question'), new_admin_test_question_path(@test) %><br>
 <br><br>
-<%= link_to 'К списку тестов', admin_tests_path %>
+<%= link_to t('.back_to_tests'), admin_tests_path %>

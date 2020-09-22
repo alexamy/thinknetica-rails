@@ -1,4 +1,6 @@
 ru:
+  h:
+    back: 'Назад'
   tests:
     test:
       start: 'Начать'
@@ -8,6 +10,14 @@ ru:
       level: 'Уровень'
       question_count: 'Количество вопросов'
       actions: 'Действия'
+  admin:
+    tests:
+      new:
+        header: 'Новый тест'
+      show:
+        level: 'Уровень'
+        add_question: 'Добавить вопрос'
+        back_to_tests: 'К списку тестов'
 
   activerecord:
     errors:
