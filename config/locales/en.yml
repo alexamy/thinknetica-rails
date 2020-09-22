@@ -30,4 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  tests:
+    index:
+      header: 'Tests'
+      label: 'Label'
+      level: 'Level'
+      question_count: 'Question count'
+      actions: 'Actions'

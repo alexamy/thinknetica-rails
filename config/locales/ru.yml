@@ -1,4 +1,12 @@
 ru:
+  tests:
+    index:
+      header: 'Тесты'
+      label: 'Название'
+      level: 'Уровень'
+      question_count: 'Количество вопросов'
+      actions: 'Действия'
+
   activerecord:
     errors:
       messages:
