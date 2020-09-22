@@ -10,7 +10,7 @@ class Admin::TestsController < Admin::BaseController
 
   def new
     @test = Test.new
-    @test.author = current_user
+    current_user.own_tests << @test
   end
 
   def edit
@@ -18,7 +18,7 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
-    @test.author = current_user
+    current_user.own_tests << @test
 
     if @test.save
       redirect_to admin_test_path(@test)
