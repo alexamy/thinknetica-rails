@@ -1,6 +1,10 @@
 ru:
   h:
+    show: 'Показать'
+    edit: 'Редактировать'
+    delete: 'Удалить'
     back: 'Назад'
+    are_you_sure: 'Вы уверены?'
   tests:
     test:
       start: 'Начать'
