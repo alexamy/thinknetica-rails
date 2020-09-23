@@ -1,10 +1,27 @@
 en:
+  h:
+    show: 'Show'
+    edit: 'Edit'
+    delete: 'Delete'
+    back: 'Back'
+    are_you_sure: 'Are you sure?'
   tests:
     test:
       start: 'Start'
-    index:
+    index: &tests-index
       header: 'Tests'
       label: 'Label'
       level: 'Level'
       question_count: 'Question count'
       actions: 'Actions'
+  admin:
+    tests:
+      new:
+        header: 'New test'
+      show:
+        level: 'Level'
+        add_question: 'Add question'
+        back_to_tests: 'To the tests'
+      index:
+        <<: *tests-index
+        add_new: 'Add new test'
