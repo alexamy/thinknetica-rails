@@ -25,14 +25,33 @@ ru:
       index:
         <<: *tests-index
         add_new: 'Создать тест'
-
   activerecord:
+    models:
+      test: 'Тест'
+    attributes:
+      test: &attributes-test
+        title: 'Название'
+        level: 'Уровень'
+        category_id: 'Категория'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
         restrict_dependent_destroy:
           has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
           has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
+  helpers:
+    select:
+      prompt: 'Выберите: '
+    submit:
+      create: Создать %{model}
+      submit: Сохранить %{model}
+      update: Сохранить %{model}
+      test:
+        create: 'Создать тест'
+        update: 'Сохранить тест'
+    label:
+      test:
+        <<: *attributes-test
   date:
     abbr_day_names:
     - Вс
@@ -202,13 +221,6 @@ ru:
         few: "%{model}: сохранение не удалось из-за %{count} ошибок"
         many: "%{model}: сохранение не удалось из-за %{count} ошибок"
         other: "%{model}: сохранение не удалось из-за %{count} ошибки"
-  helpers:
-    select:
-      prompt: 'Выберите: '
-    submit:
-      create: Создать %{model}
-      submit: Сохранить %{model}
-      update: Сохранить %{model}
   number:
     currency:
       format:

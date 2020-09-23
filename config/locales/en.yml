@@ -25,3 +25,19 @@ en:
       index:
         <<: *tests-index
         add_new: 'Add new test'
+  activerecord:
+    models:
+      test: 'Test'
+    attributes:
+      test: &attributes-test
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+  helpers:
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Save test'
+    label:
+      test:
+        <<: *attributes-test
