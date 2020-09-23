@@ -1,33 +1,54 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  h:
+    show: 'Show'
+    edit: 'Edit'
+    delete: 'Delete'
+    back: 'Back'
+    next: 'Next'
+    are_you_sure: 'Are you sure?'
+  tests:
+    test:
+      start: 'Start'
+    index: &tests-index
+      header: 'Tests'
+      label: 'Label'
+      level: 'Level'
+      question_count: 'Question count'
+      actions: 'Actions'
+  admin:
+    tests:
+      new:
+        header: 'New test'
+      show:
+        level: 'Level'
+        add_question: 'Add question'
+        back_to_tests: 'To the tests'
+      index:
+        <<: *tests-index
+        add_new: 'Add new test'
+  test_passages:
+    show:
+      header: 'Passing the test'
+      question_number: 'Question #'
+    result:
+      header: 'Test %{title} is completed!'
+      complete_percent: 'Success rate'
+      successful: 'You''ve passed the test.'
+      failed: 'You''ve failed the test.'
+      back: 'Back to tests'
+  activerecord:
+    models:
+      test: 'Test'
+    attributes:
+      test: &attributes-test
+        title: 'Title'
+        level: 'Level'
+        category_id: 'Category'
+  helpers:
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Save test'
+    label:
+      test:
+        <<: *attributes-test
