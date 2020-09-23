@@ -4,6 +4,7 @@ ru:
     edit: 'Редактировать'
     delete: 'Удалить'
     back: 'Назад'
+    next: 'Далее'
     are_you_sure: 'Вы уверены?'
   tests:
     test:
@@ -25,6 +26,16 @@ ru:
       index:
         <<: *tests-index
         add_new: 'Создать тест'
+  test_passages:
+    show:
+      header: 'Прохождение теста'
+      question_number: 'Вопрос #'
+    result:
+      header: 'Тест %{title} завершен!'
+      complete_percent: 'Процент выполнения'
+      successful: 'Тест пройден успешно.'
+      failed: 'Тест не пройден.'
+      back: 'К списку тестов'
   activerecord:
     models:
       test: 'Тест'

@@ -4,6 +4,7 @@ en:
     edit: 'Edit'
     delete: 'Delete'
     back: 'Back'
+    next: 'Next'
     are_you_sure: 'Are you sure?'
   tests:
     test:
@@ -25,6 +26,16 @@ en:
       index:
         <<: *tests-index
         add_new: 'Add new test'
+  test_passages:
+    show:
+      header: 'Passing the test'
+      question_number: 'Question #'
+    result:
+      header: 'Test %{title} is completed!'
+      complete_percent: 'Success rate'
+      successful: 'You''ve passed the test.'
+      failed: 'You''ve failed the test.'
+      back: 'Back to tests'
   activerecord:
     models:
       test: 'Test'
