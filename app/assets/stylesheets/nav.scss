@@ -1,15 +1,15 @@
-.nav {
+.navigation {
   text-align: right;
   p {
     margin: 0;
   }
 }
 
-.nav .actions {
+.navigation .actions {
   margin-bottom: 5px;
 }
 
-.nav.nav-admin {
+.navigation.navigation-admin {
   height: 35px;
   padding: 15px;
   line-height: 35px;
@@ -18,15 +18,15 @@
   margin-bottom: 40px;
 }
 
-.nav-admin.title {
+.navigation-admin.title {
   font-size: 140%;
   font-weight: bold;
 }
 
-.nav-admin.user-email {
+.navigation-admin.user-email {
   text-decoration: underline;
 }
 
-.nav.nav-admin a {
+.navigation.navigation-admin a {
   color: #ffffff;
 }

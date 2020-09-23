@@ -1,10 +1,10 @@
-<div class="nav">
+<div class="navigation">
   <p><%= link_to 'TestGuru', root_path %></p>
 
-  <span class="nav-admin title">Панель управления TestGuru</span>
+  <span class="navigation-admin title">Панель управления TestGuru</span>
 
   <% if user_signed_in? %>
-    <p class="nav-admin user">Добро пожаловать, <b class="nav-admin user-email"><%= current_user.email %></b></p>
+    <p class="navigation-admin user">Добро пожаловать, <b class="navigation-admin user-email"><%= current_user.email %></b></p>
   <% end %>
 
   <div class="actions">
