@@ -12,13 +12,11 @@
   <body>
     <%= render 'admin/navigation' %>
 
-    <%= render 'shared/flash' %>
+    <div class="container-fluid px-5 py-2">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
 
-    <%= yield %>
+  <%= render "shared/footer" %>
   </body>
-
-  <div class="footer">
-    <hr>
-    <%= render "layouts/footer" %>
-  </div>
 </html>

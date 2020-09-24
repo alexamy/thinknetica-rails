@@ -1,13 +1,14 @@
-<div class="navigation">
-  <p><%= link_to 'TestGuru', root_path %></p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand mr-auto' %>
 
-  <span class="navigation-admin title">Панель управления TestGuru</span>
+  <span class="navbar-text mr-auto text-uppercase font-weight-bold">
+    Панель управления TestGuru
+  </span>
 
-  <% if user_signed_in? %>
-    <p class="navigation-admin user">Добро пожаловать, <b class="navigation-admin user-email"><%= current_user.email %></b></p>
-  <% end %>
-
-  <div class="actions">
-    <%= link_to 'Выйти', destroy_user_session_path, method: :delete if user_signed_in? %>
-  </div>
-</div>
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      Добро пожаловать, <b><%= current_user.email %></b>
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete if user_signed_in? %>
+    <% end %>
+  </span>
+</nav>
