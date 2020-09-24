@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
+  helper_method :admin?
+
   def default_url_options
     {
       lang: I18n.locale == I18n.default_locale ? nil : I18n.locale
@@ -33,5 +35,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) do |u|
       u.permit(:first_name, :last_name, :type, :email, :password)
     end
+  end
+
+  def admin?
+    current_user.admin? if current_user
   end
 end

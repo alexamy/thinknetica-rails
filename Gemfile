@@ -65,3 +65,5 @@ gem "jquery-rails", "~> 4.4"
 gem "bootstrap", "~> 4.5"
 
 gem "sprockets", "~> 4.0"
+
+gem "bootstrap-icons-helper", "~> 1.0"
