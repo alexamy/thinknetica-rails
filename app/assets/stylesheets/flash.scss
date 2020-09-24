@@ -1,17 +1,3 @@
-.flash {
-  border: 2px solid;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.flash.alert {
-  border-color: #ef2727;
-}
-
-.flash.notice {
-  border-color: #3c85e0;
-}
-
-.flash.greeting {
-  border-color: #e0ba3c;
-}
+.alert-notice { @extend .alert-primary; }
+.alert-alert { @extend .alert-danger; }
+.alert-greeting { @extend .alert-warning; }
