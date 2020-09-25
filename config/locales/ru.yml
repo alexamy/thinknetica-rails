@@ -36,6 +36,10 @@ ru:
       successful: 'Тест пройден успешно.'
       failed: 'Тест не пройден.'
       back: 'К списку тестов'
+  devise:
+    sessions:
+      new:
+        remember: 'Запомнить меня'
   activerecord:
     models:
       test: 'Тест'

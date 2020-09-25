@@ -6,14 +6,13 @@
     <% end %>
   </span>
 
-  <span class="navbar-text mr-auto text-uppercase font-weight-bold">
-    Панель управления TestGuru
-  </span>
-
   <span class="navbar-text">
     <% if user_signed_in? %>
       Добро пожаловать, <b><%= current_user.email %></b>
-      <%= link_to 'Выйти', destroy_user_session_path, method: :delete if user_signed_in? %>
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Войти', new_user_session_path %>
+      <%= link_to 'Регистрация', new_user_registration_path %>
     <% end %>
   </span>
 </nav>

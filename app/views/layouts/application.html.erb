@@ -4,21 +4,21 @@
     <title>TestGuru</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'layouts/navigation' %>
+    <%= render 'shared/navigation' %>
 
-    <%= render 'shared/flash' %>
+    <div class="container-fluid px-5 py-2">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
 
-    <%= yield %>
+    <%= render "shared/footer" %>
   </body>
-
-  <div class="footer">
-    <hr>
-    <%= render "layouts/footer" %>
-  </div>
 </html>
