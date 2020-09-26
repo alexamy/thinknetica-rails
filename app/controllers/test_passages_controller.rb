@@ -10,8 +10,8 @@ class TestPassagesController < ApplicationController
 
   def gist
     begin
-      result = @gist_service.call
-      flash_options = { notice: t('.success', gist: result[:html_url]) }
+      gist = create_gist
+      flash_options = { notice: t('.success', gist: gist.url) }
     rescue Error
       flash_options = { alert: t('.failure') }
     end
@@ -31,6 +31,15 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def create_gist
+    result = @gist_service.call
+    Gist.create(
+      github_id: result[:id],
+      question: @test_passage.current_question,
+      user: current_user
+    )
+  end
 
   def set_gist_service
     client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
