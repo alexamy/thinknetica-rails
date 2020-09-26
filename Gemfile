@@ -71,3 +71,5 @@ gem "bootstrap-icons-helper", "~> 1.0"
 gem "faraday", "~> 1.0"
 
 gem "octokit", "~> 4.18"
+
+gem "dotenv-rails", "~> 2.7", :groups => [:development, :test]
