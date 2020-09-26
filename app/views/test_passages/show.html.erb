@@ -8,9 +8,9 @@
   <%= @test_passage.current_question_index + 1 %> / <%= questions_size(@test_passage) %>
 </p>
 
-<b>
-  <%= @test_passage.current_question.body %>
-</b>
+<p>
+  <b><%= @test_passage.current_question.body %></b>
+</p>
 
 <%= form_with url: test_passage_path(@test_passage), method: :put, local: true do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
@@ -20,5 +20,6 @@
     </p>
   <% end %>
 
+  <p><%= link_to 'Gist question', gist_test_passage_path(@test_passage), method: :post %></p>
   <p><%= form.submit t('h.next') %></p>
 <% end %>
