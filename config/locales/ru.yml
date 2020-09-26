@@ -26,6 +26,12 @@ ru:
       index:
         <<: *tests-index
         add_new: 'Создать тест'
+    gists:
+      index:
+        header: 'Gists'
+        question: 'Вопрос'
+        url: 'Ссылка на GitHub'
+        user: 'Email пользователя'
   test_passages:
     show:
       header: 'Прохождение теста'

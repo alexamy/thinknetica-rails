@@ -26,6 +26,12 @@ en:
       index:
         <<: *tests-index
         add_new: 'Add new test'
+    gists:
+      index:
+        header: 'Gists'
+        question: 'Question'
+        url: 'GitHub link'
+        user: 'User email'
   test_passages:
     show:
       header: 'Passing the test'
