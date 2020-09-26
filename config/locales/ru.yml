@@ -39,6 +39,10 @@ ru:
     gist:
       success: '<a href=%{gist}>Gist</a> успешно сохранен!'
       failure: 'Во время сохранения gist произошла ошибка'
+  services:
+    gist_question_service:
+      gist_params:
+        description: 'Вопрос из теста %{title} проекта TestGuru'
   devise:
     sessions:
       new:

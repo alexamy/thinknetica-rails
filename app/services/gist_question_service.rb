@@ -13,13 +13,21 @@ class GistQuestionService
 
   def gist_params
     {
-      description: "Вопрос из теста #{@test.title} проекта TestGuru",
+      description: gist_description,
       files: {
         'test-guru-question.txt': {
           content: gist_content
         }
       }
     }
+  end
+
+  def gist_description
+    I18n.t(
+      :description,
+      title: @test.title,
+      scope: %i[services gist_question_service gist_params]
+    )
   end
 
   def gist_content

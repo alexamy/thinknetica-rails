@@ -39,6 +39,10 @@ en:
     gist:
       success: '<a href=%{gist}>Gist</a> was successfully saved!'
       failure: 'An error occured while saving gist'
+  services:
+    gist_question_service:
+      gist_params:
+        description: 'Question from test %{title} in TestGuru project'
   devise:
     sessions:
       new:
