@@ -37,7 +37,7 @@ en:
       failed: 'You''ve failed the test.'
       back: 'Back to tests'
     gist:
-      success: 'Gist was successfully saved!'
+      success: '<a href=%{gist}>Gist</a> was successfully saved!'
       failure: 'An error occured while saving gist'
   devise:
     sessions:

@@ -1,5 +1,6 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show result update gist]
+  before_action :set_gist_service, only: :gist
 
   def show
   end
@@ -8,12 +9,11 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-
-    flash_options = if result.success?
-      { notice: t('.success') }
-    else
-      { alert: t('.failure') }
+    begin
+      result = @gist_service.call
+      flash_options = { notice: t('.success', gist: result[:html_url]) }
+    rescue Error
+      flash_options = { alert: t('.failure') }
     end
 
     redirect_to @test_passage, flash_options
@@ -32,8 +32,12 @@ class TestPassagesController < ApplicationController
 
   private
 
+  def set_gist_service
+    client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
+    @gist_service = GistQuestionService.new(@test_passage.current_question, client: client)
+  end
+
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
-
 end
