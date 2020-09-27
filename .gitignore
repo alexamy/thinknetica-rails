@@ -23,7 +23,7 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 
-# Ignore uploaded files in developm1t.
+# Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
 
