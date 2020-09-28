@@ -8,14 +8,23 @@ class GistQuestionService
   end
 
   def call
-    @client.create_gist(gist_params)
+    with_error_handler do
+      @client.create_gist(gist_params)
+    end
   end
 
   def success?
-    SUCCESS_STATUS_CODES.include?(@client.last_response.status)
+    @error.blank? && SUCCESS_STATUS_CODES.include?(@client.last_response.status)
   end
 
   private
+
+  def with_error_handler
+    @error = nil
+    yield
+  rescue Octokit::Error => e
+    @error = e
+  end
 
   def gist_params
     {
