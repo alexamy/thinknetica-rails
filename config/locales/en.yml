@@ -26,6 +26,12 @@ en:
       index:
         <<: *tests-index
         add_new: 'Add new test'
+    gists:
+      index:
+        header: 'Gists'
+        question: 'Question'
+        url: 'GitHub link'
+        user: 'User email'
   test_passages:
     show:
       header: 'Passing the test'
@@ -36,6 +42,13 @@ en:
       successful: 'You''ve passed the test.'
       failed: 'You''ve failed the test.'
       back: 'Back to tests'
+    gist:
+      success: '<a href=%{gist}>Gist</a> was successfully saved!'
+      failure: 'An error occured while saving gist'
+  services:
+    gist_question_service:
+      gist_params:
+        description: 'Question from test %{title} in TestGuru project'
   devise:
     sessions:
       new:
