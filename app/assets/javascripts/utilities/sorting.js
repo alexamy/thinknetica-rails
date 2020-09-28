@@ -11,7 +11,20 @@ function sortRowsByLabel() {
   for(let i = 1; i < rows.length; i++) {
     sortedRows.push(rows[i]);
   }
-  sortedRows.sort(compareRows);
+
+  var arrowUp = this.querySelector('.bi-arrow-up-short');
+  var arrowDown = this.querySelector('.bi-arrow-down-short');
+
+  if(arrowUp.classList.contains('hide')) {
+    arrowUp.classList.remove('hide');
+    arrowDown.classList.add('hide');
+    sortedRows.sort(compareRowsAsc);
+  }
+  else {
+    arrowUp.classList.add('hide');
+    arrowDown.classList.remove('hide');
+    sortedRows.sort(compareRowsDesc);
+  }
 
   const sortedTable = document.createElement('table');
   sortedTable.className = table.className;
@@ -21,11 +34,15 @@ function sortRowsByLabel() {
   table.parentNode.replaceChild(sortedTable, table);
 }
 
-function compareRows(row1, row2) {
+function compareRowsAsc(row1, row2) {
   const textTitle1 = row1.querySelector('td').textContent;
   const textTitle2 = row2.querySelector('td').textContent;
 
   if(textTitle1 < textTitle2) { return -1; }
   if(textTitle1 > textTitle2) { return 1; }
   return 0;
+}
+
+function compareRowsDesc(row1, row2) {
+  return compareRowsAsc(row2, row1);
 }
