@@ -7,5 +7,23 @@ function formInlineLinkHandler(event) {
   event.preventDefault();
 
   const testId = this.dataset.testId;
-  console.log(testId);
+  formInlineHandler(testId);
+}
+
+function formInlineHandler(testId) {
+  const testDataAttr = `[data-test-id="${testId}"]`;
+  const link = document.querySelector('.form-inline-link' + testDataAttr);
+  const testTitle = document.querySelector('.test-title' + testDataAttr);
+  const formInline = document.querySelector('.form-inline' + testDataAttr);
+
+  if(formInline.classList.contains('hide')) {
+    testTitle.classList.add('hide')
+    formInline.classList.remove('hide')
+    link.textContent = link.dataset.cancelLabel;
+  }
+  else {
+    testTitle.classList.remove('hide')
+    formInline.classList.add('hide')
+    link.textContent = link.dataset.editLabel;
+  }
 }

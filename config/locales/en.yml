@@ -2,6 +2,7 @@ en:
   h:
     show: 'Show'
     edit: 'Edit'
+    cancel: 'Cancel'
     delete: 'Delete'
     back: 'Back'
     next: 'Next'
