@@ -6,6 +6,15 @@
 <p>
   <%= t('.question_number') %>
   <%= @test_passage.current_question_index + 1 %> / <%= questions_size(@test_passage) %>
+
+  <div class="progress">
+    <%= content_tag :div,
+                    '',
+                    class: 'progress-bar',
+                    role: 'progressbar',
+                    data: { progress: @test_passage.current_question_index,
+                            total: questions_size(@test_passage) } %>
+  </div>
 </p>
 
 <p>
