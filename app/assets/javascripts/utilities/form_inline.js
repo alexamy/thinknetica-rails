@@ -1,6 +1,12 @@
 document.addEventListener('turbolinks:load', function() {
   const controls = document.querySelectorAll('.form-inline-link');
   controls.forEach(control => control.addEventListener('click', formInlineLinkHandler));
+
+  const errors = document.querySelector('.resource-errors');
+  if(errors) {
+    const resourceId = errors.dataset.resourceId;
+    formInlineHandler(resourceId);
+  }
 });
 
 function formInlineLinkHandler(event) {
