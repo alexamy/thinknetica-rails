@@ -14,7 +14,10 @@ document.addEventListener('turbolinks:load', function() {
 
 function checkPasswordConfirmation(password, confirmation) {
   const isExact = confirmation.value.length === 0 || password.value === confirmation.value;
-  isExact
-    ? confirmation.classList.remove('wrong')
-    : confirmation.classList.add('wrong');
+  if(isExact) {
+    confirmation.classList.remove('wrong');
+  }
+  else {
+    confirmation.classList.add('wrong');
+  }
 }
