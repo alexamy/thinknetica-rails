@@ -6,7 +6,11 @@
 
 <table class="table">
   <tr>
-    <th><%= t('.label') %></th>
+    <th class="sort-by-label pointer">
+      <%= t('.label') %>
+      <%= bootstrap_icon 'arrow-up-short', width: 25, height: 25, class: 'text-success hide' %>
+      <%= bootstrap_icon 'arrow-down-short', width: 25, height: 25, class: 'text-success hide' %>
+    </th>
     <th><%= t('.level') %></th>
     <th><%= t('.questions-count') %></th>
     <th colspan="4"><%= t('.actions') %></th>
