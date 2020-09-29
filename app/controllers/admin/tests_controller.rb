@@ -3,7 +3,6 @@ class Admin::TestsController < Admin::BaseController
   before_action :set_test, only: %i[show edit update destroy start update_inline]
 
   def index
-    @tests = Test.all
   end
 
   def show
