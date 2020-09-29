@@ -3,7 +3,7 @@ document.addEventListener('turbolinks:load', function() {
   controls.forEach(control => control.addEventListener('click', formInlineLinkHandler));
 
   const errors = document.querySelector('.resource-errors');
-  if(errors) {
+  if(controls.length && errors) {
     const resourceId = errors.dataset.resourceId;
     formInlineHandler(resourceId);
   }
