@@ -26,6 +26,8 @@ en:
       index:
         <<: *tests-index
         add_new: 'Add new test'
+      form_inline:
+        submit: 'OK'
     gists:
       index:
         header: 'Gists'

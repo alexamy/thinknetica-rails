@@ -26,6 +26,8 @@ ru:
       index:
         <<: *tests-index
         add_new: 'Создать тест'
+      form_inline:
+        submit: 'OK'
     gists:
       index:
         header: 'Gists'
