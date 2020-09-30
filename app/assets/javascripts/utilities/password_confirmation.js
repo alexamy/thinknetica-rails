@@ -1,5 +1,7 @@
 document.addEventListener('turbolinks:load', function() {
   const form = document.querySelector('form#new_user');
+  if(!form) return;
+
   const password = form.querySelector('#user_password');
   const passwordConfirmation = form.querySelector('#user_password_confirmation');
 

@@ -2,6 +2,7 @@ ru:
   h:
     show: 'Показать'
     edit: 'Редактировать'
+    cancel: 'Отменить'
     delete: 'Удалить'
     back: 'Назад'
     next: 'Далее'
@@ -26,6 +27,8 @@ ru:
       index:
         <<: *tests-index
         add_new: 'Создать тест'
+      form_inline:
+        submit: 'OK'
     gists:
       index:
         header: 'Gists'

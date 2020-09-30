@@ -2,6 +2,7 @@ en:
   h:
     show: 'Show'
     edit: 'Edit'
+    cancel: 'Cancel'
     delete: 'Delete'
     back: 'Back'
     next: 'Next'
@@ -26,6 +27,8 @@ en:
       index:
         <<: *tests-index
         add_new: 'Add new test'
+      form_inline:
+        submit: 'OK'
     gists:
       index:
         header: 'Gists'
