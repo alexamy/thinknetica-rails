@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 # append question to test with answers
 def create_question(test, question_params, *answer_params)
   question = Question.new(question_params.merge(test: test))
@@ -21,9 +13,9 @@ def create_question(test, question_params, *answer_params)
 end
 
 # Пользователи
-User.create(name: "Jonh Doe", email: "johndoe@example.com", user_type: "student", password_digest: "md5test1")
-User.create(name: "Mike Doe", email: "mikedoe@example.com", user_type: "student", password_digest: "md5test2")
-user = User.create(name: "Teresa Doe", email: "teresadoe@example.com", user_type: "teacher", password_digest: "md5test3")
+User.create(first_name: "Jonh", last_name: "Doe", type: "User", email: "johndoe@example.com")
+User.create(first_name: "Mike", last_name: "Doe", type: "User", email: "mikedoe@example.com")
+user = User.create(first_name: "Teresa", last_name: "Doe", type: "Admin", email: "teresadoe@example.com")
 
 # Категория Культура
 category = Category.create(name: "Культура")
