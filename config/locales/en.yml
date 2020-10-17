@@ -8,6 +8,7 @@ en:
     next: 'Next'
     are_you_sure: 'Are you sure?'
     send: 'Send'
+    submit: 'Submit'
   tests:
     test:
       start: 'Start'
@@ -64,6 +65,7 @@ en:
     models:
       test: 'Test'
       feedback: 'Feedback'
+      question: 'Question'
     attributes:
       test: &attributes-test
         title: 'Title'
@@ -72,6 +74,8 @@ en:
       feedback:
         email: 'Email'
         body: 'Message'
+      question:
+        body: 'Question'
   helpers:
     submit:
       test:

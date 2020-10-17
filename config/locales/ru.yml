@@ -8,6 +8,7 @@ ru:
     next: 'Далее'
     are_you_sure: 'Вы уверены?'
     send: 'Отправить'
+    submit: 'Создать'
   tests:
     test:
       start: 'Начать'
@@ -64,6 +65,7 @@ ru:
     models:
       test: 'Тест'
       feedback: 'Обратная связь'
+      question: 'Вопрос'
     attributes:
       test: &attributes-test
         title: 'Название'
@@ -72,6 +74,8 @@ ru:
       feedback:
         email: 'Email'
         body: 'Сообщение'
+      question:
+        body: 'Вопрос'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
