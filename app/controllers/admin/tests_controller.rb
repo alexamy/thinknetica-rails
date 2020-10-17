@@ -10,7 +10,6 @@ class Admin::TestsController < Admin::BaseController
 
   def new
     @test = Test.new
-    current_user.own_tests << @test
   end
 
   def edit
