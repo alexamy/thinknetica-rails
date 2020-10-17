@@ -14,13 +14,6 @@
   </div>
 
   <div class="field">
-    <%= f.radio_button :type, 'User' %>
-    <%= f.label :user_type_student, 'Ученик', class: 'inline-label' %>
-    <%= f.radio_button :type, 'Admin' %>
-    <%= f.label :user_type_teacher, 'Учитель', class: 'inline-label' %>
-  </div>
-
-  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
