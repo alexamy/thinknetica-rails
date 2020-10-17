@@ -37,6 +37,13 @@ ru:
         question: 'Вопрос'
         url: 'Ссылка на GitHub'
         user: 'Email пользователя'
+    answers:
+      new:
+        header: 'Создание нового ответа'
+      show:
+        header: 'Вопрос'
+        body: 'Ответ:'
+        correct: 'Правильный?'
   test_passages:
     show:
       header: 'Прохождение теста'
@@ -66,6 +73,7 @@ ru:
       test: 'Тест'
       feedback: 'Обратная связь'
       question: 'Вопрос'
+      answer: 'Ответ'
     attributes:
       test: &attributes-test
         title: 'Название'
@@ -76,6 +84,9 @@ ru:
         body: 'Сообщение'
       question:
         body: 'Вопрос'
+      answer:
+        body: 'Ответ'
+        correct: 'Правильный?'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
