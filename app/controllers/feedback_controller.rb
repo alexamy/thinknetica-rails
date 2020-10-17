@@ -9,6 +9,8 @@ class FeedbackController < ApplicationController
     @feedback = Feedback.new(feedback_params)
 
     if @feedback.save
+      FeedbackMailer.feedback(@feedback).deliver_now
+
       flash[:greeting] = t('.congratulation')
       redirect_to action: :new
     else
