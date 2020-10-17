@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   get 'feedback', to: 'feedback#new'
-  post 'feedback/create'
+  post 'feedback', to: 'feedback#create', as: 'feedback_send'
 
   devise_for :users,
     path: :gurus,

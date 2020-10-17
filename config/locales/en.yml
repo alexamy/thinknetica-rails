@@ -7,6 +7,7 @@ en:
     back: 'Back'
     next: 'Next'
     are_you_sure: 'Are you sure?'
+    send: 'Send'
   tests:
     test:
       start: 'Start'
@@ -48,6 +49,9 @@ en:
     gist:
       success: '<a href=%{gist}>Gist</a> was successfully saved!'
       failure: 'An error occured while saving gist'
+  feedback:
+    create:
+      congratulation: 'Thanks for you feedback!'
   services:
     gist_question_service:
       gist_params:
@@ -59,11 +63,15 @@ en:
   activerecord:
     models:
       test: 'Test'
+      feedback: 'Feedback'
     attributes:
       test: &attributes-test
         title: 'Title'
         level: 'Level'
         category_id: 'Category'
+      feedback:
+        email: 'Email'
+        body: 'Message'
   helpers:
     submit:
       test:
