@@ -2,6 +2,10 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show result update gist]
 
   def show
+    unless @test_passage.test.has_questions?
+      flash[:warning] = t('.empty_test')
+      redirect_to tests_path
+    end
   end
 
   def result

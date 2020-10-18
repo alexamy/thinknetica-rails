@@ -48,6 +48,7 @@ ru:
     show:
       header: 'Прохождение теста'
       question_number: 'Вопрос #'
+      empty_test: 'В тесте отсутствуют вопросы!'
     result:
       header: 'Тест %{title} завершен!'
       complete_percent: 'Процент выполнения'
