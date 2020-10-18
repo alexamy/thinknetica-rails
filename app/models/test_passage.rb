@@ -24,6 +24,10 @@ class TestPassage < ApplicationRecord
     success_percent >= SUCCESSFUL_PERCENT_MARGIN
   end
 
+  def available?
+    test.questions.size.positive?
+  end
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1

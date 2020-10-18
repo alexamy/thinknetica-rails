@@ -16,10 +16,6 @@ class Test < ApplicationRecord
     joins(:category).where(categories: { name: category_name })
   end
 
-  def has_questions?
-    questions.size.positive?
-  end
-
   def self.titles_by_category(category_name)
     by_category(category_name).order("title DESC").pluck(:title)
   end
