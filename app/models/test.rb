@@ -16,6 +16,10 @@ class Test < ApplicationRecord
     joins(:category).where(categories: { name: category_name })
   end
 
+  scope :with_questions, -> do
+    joins(:questions).group('tests.id').having('count(questions) > 0')
+  end
+
   def self.titles_by_category(category_name)
     by_category(category_name).order("title DESC").pluck(:title)
   end
