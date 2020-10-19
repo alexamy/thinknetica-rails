@@ -7,6 +7,8 @@ ru:
     back: 'Назад'
     next: 'Далее'
     are_you_sure: 'Вы уверены?'
+    send: 'Отправить'
+    submit: 'Создать'
   tests:
     test:
       start: 'Начать'
@@ -35,10 +37,18 @@ ru:
         question: 'Вопрос'
         url: 'Ссылка на GitHub'
         user: 'Email пользователя'
+    answers:
+      new:
+        header: 'Создание нового ответа'
+      show:
+        header: 'Вопрос'
+        body: 'Ответ:'
+        correct: 'Правильный?'
   test_passages:
     show:
       header: 'Прохождение теста'
       question_number: 'Вопрос #'
+      empty_test: 'В тесте отсутствуют вопросы!'
     result:
       header: 'Тест %{title} завершен!'
       complete_percent: 'Процент выполнения'
@@ -48,6 +58,9 @@ ru:
     gist:
       success: '<a href=%{gist}>Gist</a> успешно сохранен!'
       failure: 'Во время сохранения gist произошла ошибка'
+  feedback:
+    create:
+      congratulation: 'Спасибо за обратную связь!'
   services:
     gist_question_service:
       gist_params:
@@ -59,11 +72,22 @@ ru:
   activerecord:
     models:
       test: 'Тест'
+      feedback: 'Обратная связь'
+      question: 'Вопрос'
+      answer: 'Ответ'
     attributes:
       test: &attributes-test
         title: 'Название'
         level: 'Уровень'
         category_id: 'Категория'
+      feedback:
+        email: 'Email'
+        body: 'Сообщение'
+      question:
+        body: 'Вопрос'
+      answer:
+        body: 'Ответ'
+        correct: 'Правильный?'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'

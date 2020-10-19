@@ -15,7 +15,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.build(question_params)
 
     if @question.save
-      redirect_to action: 'index'
+      redirect_to admin_question_path(@question)
     else
       render 'new'
     end

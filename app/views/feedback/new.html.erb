@@ -1,0 +1,17 @@
+<h1>Обратная связь</h1>
+
+<%= form_with model: @feedback, url: feedback_send_path, local: true do |form| %>
+  <%= render 'shared/errors', resource: @feedback %>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :body %>
+    <%= form.text_area :body, class: 'form-control' %>
+  </div>
+
+  <%= form.submit t('h.send'), class: 'btn btn-primary' %>
+<% end %>

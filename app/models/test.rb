@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
   belongs_to :category
-  has_many :questions
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
+  has_many :questions, dependent: :destroy
   has_many :users, through: :test_passages
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
@@ -14,6 +14,10 @@ class Test < ApplicationRecord
 
   scope :by_category, -> category_name do
     joins(:category).where(categories: { name: category_name })
+  end
+
+  scope :with_questions, -> do
+    joins(:questions).group('tests.id').having('count(questions) > 0')
   end
 
   def self.titles_by_category(category_name)

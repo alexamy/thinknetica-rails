@@ -1,4 +1,4 @@
-<h1>Вопрос</h1>
+<h1><%= t('.header') %></h1>
 
 <p id="notice"><%= notice %></p>
 
@@ -7,14 +7,14 @@
 </p>
 
 <p>
-  <b>Ответ:</b>
+  <b><%= t('.body') %></b>
   <%= @answer.body %>
 </p>
 
 <p>
-  <b>Правильность:</b>
+  <b><%= t('.correct') %></b>
   <%= @answer.correct %>
 </p>
 
-<%= link_to 'Редактировать', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Назад', admin_question_path(@answer.question) %> |
+<%= link_to t('h.edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('h.back'), admin_question_path(@answer.question) %> |

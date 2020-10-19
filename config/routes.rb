@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+
+  root 'tests#index'
+
   namespace :admin do
     get 'gists/index'
   end
-  root 'tests#index'
+
+  get 'feedback', to: 'feedback#new'
+  post 'feedback', to: 'feedback#create', as: 'feedback_send'
 
   devise_for :users,
     path: :gurus,

@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.7.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -30,6 +29,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "dotenv-rails", "~> 2.7"
 end
 
 group :development do
@@ -42,6 +42,7 @@ group :development do
   # Debugging
   gem "ruby-debug-ide", "~> 0.7.2"
   gem "debase", "~> 0.2.4"
+  gem "letter_opener", "~> 1.7"
 end
 
 group :test do
@@ -57,11 +58,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.7"
 
-gem "letter_opener", "~> 1.7", :group => :development
-
 gem "rails-i18n", "~> 6.0"
 
 gem "jquery-rails", "~> 4.4"
+
 gem "bootstrap", "~> 4.5"
 
 gem "sprockets", "~> 4.0"
@@ -72,4 +72,4 @@ gem "faraday", "~> 1.0"
 
 gem "octokit", "~> 4.18"
 
-gem "dotenv-rails", "~> 2.7", :groups => [:development, :test]
+gem "pg", "~> 1.2"
