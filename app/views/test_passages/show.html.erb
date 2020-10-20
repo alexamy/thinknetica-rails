@@ -10,7 +10,8 @@
   <% if @test_passage.with_time? %>
     <div class="completion-time">
       <span><%= t('.completion_time') %></span>
-      <span id="completion-time"><%= @test_passage.completion_time_left %></span>
+      <span class="timer-elapsed" data-start-time="<%= @test_passage.completion_time_left %>">
+      </span>
     </div>
   <% end %>
 
