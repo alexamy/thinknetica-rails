@@ -12,6 +12,11 @@
   </div>
 
   <div class="form-group">
+    <%= form.label :completion_time %>
+    <%= form.number_field :completion_time, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: true }, { class: 'form-control' } %>
   </div>

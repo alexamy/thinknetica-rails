@@ -17,13 +17,14 @@ en:
       label: 'Label'
       level: 'Level'
       question_count: 'Question count'
+      completion_time: 'Completion time'
       actions: 'Actions'
   admin:
     tests:
       new:
         header: 'New test'
       show:
-        level: 'Level'
+        <<: *tests-index
         add_question: 'Add question'
         back_to_tests: 'To the tests'
       index:
@@ -80,6 +81,7 @@ en:
         title: 'Title'
         level: 'Level'
         category_id: 'Category'
+        completion_time: 'Completion time'
       feedback:
         email: 'Email'
         body: 'Message'

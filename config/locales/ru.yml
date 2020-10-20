@@ -17,13 +17,14 @@ ru:
       label: 'Название'
       level: 'Уровень'
       question_count: 'Количество вопросов'
+      completion_time: 'Время завершения'
       actions: 'Действия'
   admin:
     tests:
       new:
         header: 'Новый тест'
       show:
-        level: 'Уровень'
+        <<: *tests-index
         add_question: 'Добавить вопрос'
         back_to_tests: 'К списку тестов'
       index:
@@ -80,6 +81,7 @@ ru:
         title: 'Название'
         level: 'Уровень'
         category_id: 'Категория'
+        completion_time: 'Время завершения'
       feedback:
         email: 'Email'
         body: 'Сообщение'
