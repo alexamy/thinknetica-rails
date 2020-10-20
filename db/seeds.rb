@@ -57,7 +57,7 @@ create_question test,
 
 
 ## Haskell
-test = Test.create(title: "Haskell", level: 2, category: category, author: user)
+test = Test.create(title: "Haskell", level: 2, completion_time: 1, category: category, author: user)
 
 create_question test,
   { body: "Какой тип свёртки позволяет обрабатывать бесконечные списки?" },
