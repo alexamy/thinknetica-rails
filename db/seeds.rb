@@ -12,7 +12,16 @@ def create_question(test, question_params, *answer_params)
   question
 end
 
-user = User.create(first_name: "Teresa", last_name: "Doe", type: "Admin", email: "teresadoe@example.com")
+user = User.new(
+  first_name: "John",
+  last_name: "Doe",
+  type: "Admin",
+  email: "alexamy.test.guru@gmail.com",
+  password: ENV['ADMIN_PASS'],
+  password_confirmation: ENV['ADMIN_PASS']
+)
+user.skip_confirmation!
+user.save!
 
 # Категория Культура
 category = Category.create(name: "Культура")
