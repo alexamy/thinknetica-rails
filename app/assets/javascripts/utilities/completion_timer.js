@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
-  const timers = document.querySelectorAll('.timer-elapsed');
+  const timers = [...document.querySelectorAll('.timer-elapsed')];
   timers.forEach(node => setTimer(node));
 });
 
@@ -9,6 +9,10 @@ function setTimer(node) {
   const updateTime = () => {
     node.textContent = toMinutesSecond(elapsedTime);
     elapsedTime -= 1;
+
+    if(elapsedTime <= -5) { // better sync with backend than 0
+      location.reload();
+    }
   }
 
   updateTime();
