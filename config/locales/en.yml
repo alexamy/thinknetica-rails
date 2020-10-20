@@ -50,6 +50,7 @@ en:
       header: 'Passing the test'
       question_number: 'Question #'
       empty_test: 'No questions in test!'
+      completion_time: 'Time left:'
     result:
       header: 'Test %{title} is completed!'
       complete_percent: 'Success rate'

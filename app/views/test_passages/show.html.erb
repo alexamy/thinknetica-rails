@@ -7,6 +7,13 @@
   <%= t('.question_number') %>
   <%= @test_passage.current_question_index + 1 %> / <%= questions_size(@test_passage) %>
 
+  <% if @test_passage.with_time? %>
+    <div class="completion-time">
+      <span><%= t('.completion_time') %></span>
+      <span id="completion-time"><%= @test_passage.completion_time_left %></span>
+    </div>
+  <% end %>
+
   <div class="progress">
     <%= content_tag :div,
                     '',
