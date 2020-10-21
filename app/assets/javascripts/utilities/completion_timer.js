@@ -11,7 +11,7 @@ function setTimer(node) {
     elapsedTime -= 1;
 
     if(elapsedTime <= -5) { // better sync with backend than 0
-      location.reload();
+      document.querySelector('#question-form').submit();
     }
   }
 

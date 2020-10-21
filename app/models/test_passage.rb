@@ -8,7 +8,11 @@ class TestPassage < ApplicationRecord
   SUCCESSFUL_PERCENT_MARGIN = 85
 
   def completed?
-    current_question.nil? || (with_time? && completion_time_left.negative?)
+    current_question.nil?
+  end
+
+  def time_out?
+    with_time? && completion_time_left.negative?
   end
 
   def current_question_index
