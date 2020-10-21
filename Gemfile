@@ -73,3 +73,5 @@ gem "faraday", "~> 1.0"
 gem "octokit", "~> 4.18"
 
 gem "pg", "~> 1.2"
+
+gem "inline_svg", "~> 1.7"
