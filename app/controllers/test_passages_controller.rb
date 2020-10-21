@@ -29,8 +29,8 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
-      TestsMailer.completed_test(@test_passage).deliver_now
+    if @test_passage.completed? || @test_passage.time_out?
+      send_results_to_email
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -38,6 +38,13 @@ class TestPassagesController < ApplicationController
   end
 
   private
+
+  def send_results_to_email
+    unless @test_passage.completed_at
+      @test_passage.touch(:completed_at)
+      TestsMailer.completed_test(@test_passage).deliver_now
+    end
+  end
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])

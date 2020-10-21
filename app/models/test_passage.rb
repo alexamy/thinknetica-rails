@@ -11,6 +11,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def time_out?
+    with_time? && completion_time_left.negative?
+  end
+
   def current_question_index
     test.questions.ids.index(current_question.id)
   end
@@ -22,6 +26,15 @@ class TestPassage < ApplicationRecord
 
   def successful?
     success_percent >= SUCCESSFUL_PERCENT_MARGIN
+  end
+
+  def with_time?
+    test.completion_time.positive?
+  end
+
+  def completion_time_left
+    seconds = test.completion_time * 60 - (Time.now - created_at)
+    seconds.to_i
   end
 
   def accept!(answer_ids)

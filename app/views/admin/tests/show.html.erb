@@ -4,9 +4,15 @@
   <%= @test.level %>
 </p>
 
+<p>
+  <%= t('.completion_time') %>:
+  <%= @test.completion_time %>
+</p>
+
 <%= render 'admin/questions/test_questions' %>
 <br>
 
 <%= link_to t('.add_question'), new_admin_test_question_path(@test) %><br>
+<%= link_to t('h.edit'), edit_admin_test_path(@test) %><br>
 <br><br>
 <%= link_to t('.back_to_tests'), admin_tests_path %>
