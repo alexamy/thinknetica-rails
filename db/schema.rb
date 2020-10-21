@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_20_215307) do
+ActiveRecord::Schema.define(version: 2020_10_22_191425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,28 @@ ActiveRecord::Schema.define(version: 2020_10_20_215307) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "correct", default: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badge_rewards", force: :cascade do |t|
+    t.bigint "badge_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_badge_rewards_on_badge_id"
+    t.index ["user_id"], name: "index_badge_rewards_on_user_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name"
+    t.string "filename"
+    t.boolean "once", default: false
+    t.integer "level", default: 0
+    t.bigint "category_id"
+    t.bigint "test_first_try_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_badges_on_category_id"
+    t.index ["test_first_try_id"], name: "index_badges_on_test_first_try_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -108,6 +130,10 @@ ActiveRecord::Schema.define(version: 2020_10_20_215307) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "badge_rewards", "badges"
+  add_foreign_key "badge_rewards", "users"
+  add_foreign_key "badges", "categories"
+  add_foreign_key "badges", "tests", column: "test_first_try_id"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "questions", "tests"
