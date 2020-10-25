@@ -9,6 +9,7 @@ ru:
     are_you_sure: 'Вы уверены?'
     send: 'Отправить'
     submit: 'Создать'
+    actions: 'Действия'
   tests:
     test:
       start: 'Начать'
@@ -45,6 +46,15 @@ ru:
         header: 'Вопрос'
         body: 'Ответ:'
         correct: 'Правильный?'
+    badges:
+      index:
+        new: 'Добавить новый'
+        header: 'Список бейджей'
+        badge: 'Бейдж'
+        name: 'Название'
+        level: 'Уровень'
+        category: 'Категория'
+        test: 'Тест'
   test_passages:
     show:
       header: 'Прохождение теста'
