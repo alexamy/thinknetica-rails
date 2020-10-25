@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'tests#index'
 
   namespace :admin do
@@ -27,6 +26,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :gists, only: %i[index]
+    resources :badges, except: :show
+
     resources :tests do
       patch :update_inline, on: :member
 
