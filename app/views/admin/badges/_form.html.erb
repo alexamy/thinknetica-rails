@@ -3,7 +3,7 @@
 
   <div class="form-group">
     <%= form.label :filename %>
-    <%= form.collection_select :filename, Badge.filenames, :to_s, :to_s, {}, { class: 'form-control' } %>
+    <%= form.select :filename, badges_for_select, {}, { class: 'form-control' } %>
   </div>
 
   <div class="form-group">

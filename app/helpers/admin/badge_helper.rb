@@ -1,6 +1,12 @@
 module Admin::BadgeHelper
   PLACEHOLDER = '-'
 
+  def badges_for_select
+    Badge.filenames.map do |filename|
+      [filename, filename, { 'data-image-path': image_path("badges/#{filename}.svg") }]
+    end
+  end
+
   def sprite_for(filename, options = {})
     options[:size] ||= '50px * 50px'
 
