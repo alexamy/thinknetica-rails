@@ -55,6 +55,10 @@ en:
         level: 'Level'
         category: 'Category'
         test: 'Test'
+      new:
+        header: 'New badge'
+      edit:
+        header: 'Edit badge'
   test_passages:
     show:
       header: 'Passing the test'
@@ -87,6 +91,7 @@ en:
       feedback: 'Feedback'
       question: 'Question'
       answer: 'Answer'
+      badge: 'Badge'
     attributes:
       test: &attributes-test
         title: 'Title'
@@ -101,6 +106,12 @@ en:
       answer:
         body: 'Answer'
         correct: 'Correct?'
+      badge:
+        name: 'Name'
+        filename: 'Icon'
+        level: 'Level'
+        category: 'Category'
+        test_first_try: 'Test'
   helpers:
     submit:
       test:

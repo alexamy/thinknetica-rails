@@ -1,10 +1,10 @@
 module Admin::BadgeHelper
   PLACEHOLDER = '-'
 
-  def sprite_for(badge, options = {})
+  def sprite_for(filename, options = {})
     options[:size] ||= '50px * 50px'
 
-    inline_svg_tag "badges/#{badge.filename}.svg", options
+    inline_svg_tag "badges/#{filename}.svg", options
   end
 
   def level(badge)

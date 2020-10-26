@@ -55,6 +55,10 @@ ru:
         level: 'Уровень'
         category: 'Категория'
         test: 'Тест'
+      new:
+        header: 'Новый бейдж'
+      edit:
+        header: 'Редактирование бейджа'
   test_passages:
     show:
       header: 'Прохождение теста'
@@ -87,6 +91,7 @@ ru:
       feedback: 'Обратная связь'
       question: 'Вопрос'
       answer: 'Ответ'
+      badge: 'Бейдж'
     attributes:
       test: &attributes-test
         title: 'Название'
@@ -101,6 +106,12 @@ ru:
       answer:
         body: 'Ответ'
         correct: 'Правильный?'
+      badge:
+        name: 'Название'
+        filename: 'Иконка'
+        level: 'Уровень'
+        category: 'Категория'
+        test_first_try: 'Тест'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
