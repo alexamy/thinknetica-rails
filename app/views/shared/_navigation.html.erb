@@ -4,7 +4,7 @@
     <%= link_to admin_tests_path do %>
       <%= bootstrap_icon 'hammer', width: 25, height: 25 if admin? %>
     <% end %>
-    <%= link_to (admin? ? admin_badges_path : badges_path) do %>
+    <%= link_to badges_path do %>
       <%= inline_svg_tag 'badges/008-medal.svg', size: '30px * 30px' %>
     <% end %>
   </span>

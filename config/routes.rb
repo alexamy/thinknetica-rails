@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   root 'tests#index'
 
-  namespace :admin do
-    get 'gists/index'
-  end
-
   get 'feedback', to: 'feedback#new'
   post 'feedback', to: 'feedback#create', as: 'feedback_send'
+
+  resources :badges, only: %i[index]
 
   devise_for :users,
     path: :gurus,
