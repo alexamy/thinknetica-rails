@@ -21,7 +21,7 @@ en:
       completion_time: 'Completion time'
       actions: 'Actions'
   badges:
-    index:
+    show:
       header: 'Badges'
       badge: 'Badge'
       name: 'Name'

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'feedback', to: 'feedback#new'
   post 'feedback', to: 'feedback#create', as: 'feedback_send'
 
-  resources :badges, only: %i[index]
+  resources :badges, only: %i[index] do
+    get 'my', on: :collection, to: 'badges#show'
+  end
 
   devise_for :users,
     path: :gurus,

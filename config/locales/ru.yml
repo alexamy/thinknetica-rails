@@ -21,7 +21,7 @@ ru:
       completion_time: 'Время завершения'
       actions: 'Действия'
   badges:
-    index:
+    show:
       header: 'Список бейджей'
       badge: 'Бейдж'
       name: 'Название'
