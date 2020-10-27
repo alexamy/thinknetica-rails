@@ -25,6 +25,7 @@ ru:
       header: 'Список бейджей'
       badge: 'Бейдж'
       name: 'Название'
+      count: 'Количество'
   admin:
     tests:
       new:

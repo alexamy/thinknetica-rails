@@ -25,6 +25,7 @@ en:
       header: 'Badges'
       badge: 'Badge'
       name: 'Name'
+      count: 'Count'
   admin:
     tests:
       new:

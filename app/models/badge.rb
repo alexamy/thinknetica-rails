@@ -21,6 +21,10 @@ class Badge < ApplicationRecord
        046-diploma 047-basketball 048-badge  049-medal    050-trophy]
   end
 
+  def count_for(user)
+    user.badges.count { |badge| badge == self }
+  end
+
   private
 
   def validate_presence_of_condition
