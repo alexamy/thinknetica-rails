@@ -1,10 +1,12 @@
 <h1><%= t('.header') %></h1>
 
+<%= link_to t('.badges_all'), badges_path %>
+
 <table class="table table-hover">
   <tr>
     <th><%= t('.badge') %></th>
     <th><%= t('.name') %></th>
     <th><%= t('.count') %></th>
   </tr>
-  <%= render @badges %>
+  <%= render partial: 'badge_count', collection: @badges, as: 'badge' %>
 </table>

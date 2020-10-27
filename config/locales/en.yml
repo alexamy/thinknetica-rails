@@ -21,8 +21,17 @@ en:
       completion_time: 'Completion time'
       actions: 'Actions'
   badges:
-    show:
+    index: &badges-index
       header: 'Badges'
+      badges_my: 'To your badges list'
+      badge: 'Badge'
+      name: 'Name'
+      level: 'Level'
+      category: 'Category'
+      test: 'Test'
+    show:
+      header: 'Your badges'
+      badges_all: 'To badges list'
       badge: 'Badge'
       name: 'Name'
       count: 'Count'
@@ -54,13 +63,8 @@ en:
         correct: 'Correct?'
     badges:
       index:
+        <<: *badges-index
         new: 'Add new'
-        header: 'Badges'
-        badge: 'Badge'
-        name: 'Name'
-        level: 'Level'
-        category: 'Category'
-        test: 'Test'
       new:
         header: 'New badge'
       edit:

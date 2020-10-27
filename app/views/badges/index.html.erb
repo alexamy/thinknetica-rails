@@ -1,0 +1,14 @@
+<h1><%= t('.header') %></h1>
+
+<%= link_to t('.badges_my'), my_badges_path %>
+
+<table class="table table-hover">
+  <tr>
+    <th><%= t('.badge') %></th>
+    <th><%= t('.name') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.test') %></th>
+  </tr>
+  <%= render @badges %>
+</table>
