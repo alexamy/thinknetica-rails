@@ -1,2 +1,9 @@
-<h1>Badges#index</h1>
-<p>Find me in app/views/badges/index.html.erb</p>
+<h1><%= t('.header') %></h1>
+
+<table class="table table-hover">
+  <tr>
+    <th><%= t('.badge') %></th>
+    <th><%= t('.name') %></th>
+  </tr>
+  <%= render @badges %>
+</table>

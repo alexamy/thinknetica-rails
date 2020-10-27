@@ -20,6 +20,11 @@ ru:
       question_count: 'Количество вопросов'
       completion_time: 'Время завершения'
       actions: 'Действия'
+  badges:
+    index:
+      header: 'Список бейджей'
+      badge: 'Бейдж'
+      name: 'Название'
   admin:
     tests:
       new:

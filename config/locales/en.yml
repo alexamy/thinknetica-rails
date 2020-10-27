@@ -20,6 +20,11 @@ en:
       question_count: 'Question count'
       completion_time: 'Completion time'
       actions: 'Actions'
+  badges:
+    index:
+      header: 'Badges'
+      badge: 'Badge'
+      name: 'Name'
   admin:
     tests:
       new:
