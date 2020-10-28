@@ -43,6 +43,7 @@ group :development do
   gem "ruby-debug-ide", "~> 0.7.2"
   gem "debase", "~> 0.2.4"
   gem "letter_opener", "~> 1.7"
+  gem "bullet", "~> 6.1"
 end
 
 group :test do
