@@ -124,8 +124,8 @@ en:
         filename: 'Icon'
         type: 'Type'
         level: 'Level'
-        category: 'Category'
-        test_first_try: 'Test'
+        category_id: 'Category'
+        test_id: 'Test'
   helpers:
     submit:
       test:

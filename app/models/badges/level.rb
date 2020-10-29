@@ -1,7 +1,5 @@
 class Badges::Level < Badge
-  def level
-    condition.to_i
-  end
+  alias_attribute :level, :condition
 
   def reward?(user, test)
     return unless test.level == level

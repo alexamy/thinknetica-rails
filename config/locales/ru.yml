@@ -124,8 +124,8 @@ ru:
         filename: 'Иконка'
         type: 'Тип бейджа'
         level: 'Уровень'
-        category: 'Категория'
-        test_first_try: 'Тест'
+        category_id: 'Категория'
+        test_id: 'Тест'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
