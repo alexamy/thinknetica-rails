@@ -1,5 +1,7 @@
 class BadgeTestReward < ApplicationService
   def initialize(user, test_passage)
+    return unless @test_passage.completed? && @test_passage.successful?
+
     @user = user
     @test_passage = test_passage
     @test = @test_passage.test
@@ -7,8 +9,6 @@ class BadgeTestReward < ApplicationService
   end
 
   def call
-    return unless @test_passage.completed? && @test_passage.successful?
-
     @badges.each do |badge|
       checks = [find_test_first_try(badge), find_category(badge), find_level(badge)]
       can_reward = checks.compact.all?(&:itself)
