@@ -31,7 +31,7 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed? || @test_passage.time_out?
       send_results_to_email
-      BadgeTestReward.call(current_user, @test_passage)
+      BadgeTestReward.call(current_user, @test_passage) if @test_passage.successful?
 
       redirect_to result_test_passage_path(@test_passage)
     else

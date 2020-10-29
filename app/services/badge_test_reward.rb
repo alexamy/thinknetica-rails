@@ -1,7 +1,5 @@
 class BadgeTestReward < ApplicationService
   def initialize(user, test_passage)
-    return unless @test_passage.completed? && @test_passage.successful?
-
     @user = user
     @test_passage = test_passage
     @test = @test_passage.test
