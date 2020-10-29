@@ -2,11 +2,7 @@ class Badge < ApplicationRecord
   has_many :badge_rewards
   has_many :users, through: :badge_rewards
 
-  belongs_to :test_first_try, class_name: 'Test', optional: true
-  belongs_to :category, optional: true
-
-  validates_presence_of :name, :filename
-  validate :validate_presence_of_condition
+  validates_presence_of :name, :filename, :condition
 
   def self.filenames
     %w[001-medal   002-trophy     003-flag   004-badge    005-medal
@@ -23,12 +19,5 @@ class Badge < ApplicationRecord
 
   def count_for(user)
     user.badges.count { |badge| badge == self }
-  end
-
-  private
-
-  def validate_presence_of_condition
-    has_condition = level.positive? || category || test_first_try
-    errors.add(:badge_rewards, 'должен иметь категорию, или тест, или уровень') unless has_condition
   end
 end
