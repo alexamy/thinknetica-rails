@@ -1,8 +1,8 @@
 class Badges::Category < Badge
-  alias_method :category, :condition
+  alias_attribute :category, :condition
 
   def reward?(user, test)
-    return unless test.category == category
+    return unless test.category.id == category
 
     tests_all = Test.where(category: category).map(&:id).sort
     tests_user = user.test_passages.map(&:test)
