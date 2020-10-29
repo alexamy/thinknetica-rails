@@ -102,6 +102,9 @@ en:
       question: 'Question'
       answer: 'Answer'
       badge: 'Badge'
+      badges/level: 'Level badge'
+      badges/category: 'Category badge'
+      badges/first_try: 'First try badge'
     attributes:
       test: &attributes-test
         title: 'Title'
@@ -119,6 +122,7 @@ en:
       badge:
         name: 'Name'
         filename: 'Icon'
+        type: 'Type'
         level: 'Level'
         category: 'Category'
         test_first_try: 'Test'

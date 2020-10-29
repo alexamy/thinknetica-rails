@@ -102,6 +102,9 @@ ru:
       question: 'Вопрос'
       answer: 'Ответ'
       badge: 'Бейдж'
+      badges/level: 'Бейдж за уровень'
+      badges/category: 'Бейдж за категорию'
+      badges/first_try: 'Бейдж за прохождение теста с первого раза'
     attributes:
       test: &attributes-test
         title: 'Название'
@@ -119,6 +122,7 @@ ru:
       badge:
         name: 'Название'
         filename: 'Иконка'
+        type: 'Тип бейджа'
         level: 'Уровень'
         category: 'Категория'
         test_first_try: 'Тест'
