@@ -20,4 +20,8 @@ class Badge < ApplicationRecord
   def count_for(user)
     user.badges.count { |badge| badge == self }
   end
+
+  def to_partial_path
+    'badges/badge'
+  end
 end

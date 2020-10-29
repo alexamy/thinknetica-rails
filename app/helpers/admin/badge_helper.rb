@@ -14,14 +14,14 @@ module Admin::BadgeHelper
   end
 
   def level(badge)
-    badge.level.positive? ? badge.level : PLACEHOLDER
+    badge.try(:level) || PLACEHOLDER
   end
 
   def category(badge)
-    badge.category&.name || PLACEHOLDER
+    badge.try(:category).try(:name) || PLACEHOLDER
   end
 
   def test_first_try(badge)
-    badge.test_first_try&.title || PLACEHOLDER
+    badge.try(:test).try(:title) || PLACEHOLDER
   end
 end
