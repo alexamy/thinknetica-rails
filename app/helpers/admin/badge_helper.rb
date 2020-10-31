@@ -18,17 +18,14 @@ module Admin::BadgeHelper
   end
 
   def level(badge)
-    return unless badge.rule == 'level'
-    badge.condition.to_i
+    badge.rule == 'level' && badge.condition.to_i
   end
 
   def category(badge)
-    return unless badge.rule == 'category'
-    Category.find(badge.condition).name
+    badge.rule == 'category' && Category.find(badge.condition).name
   end
 
   def first_try(badge)
-    return unless badge.rule == 'first_try'
-    Test.find(badge.condition).title
+    badge.rule == 'first_try' && Test.find(badge.condition).title
   end
 end
