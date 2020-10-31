@@ -118,6 +118,10 @@ ru:
       badge:
         name: 'Название'
         filename: 'Иконка'
+        rule: 'Правило'
+        level: 'Уровень'
+        category: 'Категория'
+        test: 'Тест'
         rules:
           level: 'Уровень'
           category: 'Категория'

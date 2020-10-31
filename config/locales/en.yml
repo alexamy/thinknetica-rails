@@ -118,6 +118,10 @@ en:
       badge:
         name: 'Name'
         filename: 'Icon'
+        rule: 'Rule'
+        level: 'Level'
+        category: 'Category'
+        test: 'Test first try'
         rules:
           level: 'Level'
           category: 'Category'

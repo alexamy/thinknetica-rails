@@ -10,4 +10,9 @@ module ApplicationHelper
   def admin?
     current_user.admin? if current_user
   end
+
+  def enum_for_select(model, key)
+    model.send(key.to_s.pluralize)
+      .map { |value, id| [model.send(:human_enum_name, key, value), value] }
+  end
 end
