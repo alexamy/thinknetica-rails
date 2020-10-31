@@ -8,42 +8,37 @@ class BadgeTestReward < ApplicationService
 
   def call
     @badges.each do |badge|
-      checks = [find_test_first_try(badge), find_category(badge), find_level(badge)]
-      can_reward = checks.compact.all?(&:itself)
-
-      @user.badges << badge if can_reward
+      @user.badges << badge if send("#{badge.rule}_reward?", badge.condition)
     end
   end
 
   private
 
-  def find_test_first_try(badge)
-    return unless badge.test_first_try
-    return false unless badge.test_first_try == @test
+  def first_try_reward?(test)
+    return unless @test.id == test
 
-    @user.test_passages.where(test: badge.test_first_try).count == 1
+    user.test_passages.where(test: test).count == 1
   end
 
-  def find_category(badge)
-    return unless badge.category
-    return false unless badge.category == @test.category
 
-    tests_all = Test.where(category: badge.category).map(&:id).sort
-    tests_user = @user.test_passages.map(&:test)
-      .select { |test| test.category == badge.category }
-      .map(&:id).uniq.sort
+  def category_reward?(category)
+    return unless @test.category.id == category
+
+    tests_all = Test.where(category: category).ids.sort
+    tests_user = @user.test_passages.includes(:test)
+      .where(tests: { category: category })
+      .ids.uniq.sort
 
     tests_user == tests_all
   end
 
-  def find_level(badge)
-    return unless badge.level.positive?
-    return false unless badge.level == @test.level
+  def level_reward?(level)
+    return unless @test.level == level.to_i
 
-    tests_all = Test.where(level: badge.level).map(&:id).sort
-    tests_user = @user.test_passages.map(&:test)
-      .select { |test| test.level == badge.level }
-      .map(&:id).uniq.sort
+    tests_all = Test.where(level: level).ids.sort
+    tests_user = @user.test_passages.includes(:test)
+      .where(tests: { level: level })
+      .ids.uniq.sort
 
     tests_user == tests_all
   end
