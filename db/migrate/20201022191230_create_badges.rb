@@ -4,7 +4,7 @@ class CreateBadges < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :filename
       t.integer :rule
-      t.string :condition
+      t.integer :condition
 
       t.timestamps
     end

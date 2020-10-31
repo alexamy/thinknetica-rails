@@ -15,13 +15,13 @@ class BadgeTestReward < ApplicationService
   private
 
   def first_try_reward?(test)
-    return unless @test.id == test.to_i
+    return unless @test.id == test
 
     @user.test_passages.where(test: test).count == 1
   end
 
   def category_reward?(category)
-    return unless @test.category_id == category.to_i
+    return unless @test.category_id == category
 
     tests_all = Test.where(category: category).ids.sort
     tests_user = @user.test_passages.includes(:test)
@@ -32,7 +32,7 @@ class BadgeTestReward < ApplicationService
   end
 
   def level_reward?(level)
-    return unless @test.level == level.to_i
+    return unless @test.level == level
 
     tests_all = Test.where(level: level).ids.sort
     tests_user = @user.test_passages.includes(:test)

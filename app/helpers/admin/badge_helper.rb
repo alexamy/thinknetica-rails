@@ -18,7 +18,7 @@ module Admin::BadgeHelper
   end
 
   def level(badge)
-    badge.rule == 'level' && badge.condition.to_i
+    badge.rule == 'level' && badge.condition
   end
 
   def category(badge)

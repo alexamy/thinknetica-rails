@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_191425) do
     t.string "name"
     t.string "filename"
     t.integer "rule"
-    t.string "condition"
+    t.integer "condition"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
