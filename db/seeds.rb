@@ -72,15 +72,15 @@ create_question test,
 # badges
 Badge.create(name: 'За тесты 1го уровня',
              filename: '002-trophy',
-             rule: 'level',
+             rule: 0,
              condition: 1)
 
 Badge.create(name: 'За тесты категории "Программирование"',
              filename: '020-badge',
-             rule: 'category',
+             rule: 1,
              condition: category.id)
 
 Badge.create(name: 'За прохождение теста "Haskell" с первого раза',
              filename: '017-trophy',
-             rule: 'first_try',
+             rule: 2,
              condition: test.id)

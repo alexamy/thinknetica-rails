@@ -26,9 +26,8 @@ ru:
       badges_my: 'К списку ваших бейджей'
       badge: 'Бейдж'
       name: 'Название'
-      level: 'Уровень'
-      category: 'Категория'
-      test: 'Тест'
+      rule: 'Правило'
+      condition: 'Условие'
     show:
       header: 'Ваши бейджи'
       badges_all: 'К списку всех бейджей'
@@ -119,9 +118,10 @@ ru:
       badge:
         name: 'Название'
         filename: 'Иконка'
-        level: 'Уровень'
-        category: 'Категория'
-        test_first_try: 'Тест'
+        rules:
+          level: 'Уровень'
+          category: 'Категория'
+          first_try: 'Тест с первой попытки'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'

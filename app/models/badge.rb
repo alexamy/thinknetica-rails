@@ -4,6 +4,8 @@ class Badge < ApplicationRecord
 
   validates_presence_of :name, :filename, :rule, :condition
 
+  enum rule: %i[level category first_try]
+
   def self.filenames
     %w[001-medal   002-trophy     003-flag   004-badge    005-medal
        006-medal   007-star       008-medal  009-trophy   010-flag
@@ -15,10 +17,6 @@ class Badge < ApplicationRecord
        036-trophy  037-medal      038-trophy 039-trophy   040-trophy
        041-gift    042-trophy     043-badge  044-medal    045-badge
        046-diploma 047-basketball 048-badge  049-medal    050-trophy]
-  end
-
-  def self.rules
-    %w[level category first_try]
   end
 
   def count_for(user)

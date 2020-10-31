@@ -1,9 +1,8 @@
 <tr>
   <td class="align-middle"><%= sprite_for(badge.filename) %></td>
   <td class="align-middle"><%= badge.name %></td>
-  <td class="align-middle"><%= level(badge) %></td>
-  <td class="align-middle"><%= category(badge) %></td>
-  <td class="align-middle"><%= test_first_try(badge) %></td>
+  <td class="align-middle"><%= badge.rule %></td>
+  <td class="align-middle"><%= condition(badge) %></td>
   <td class="align-middle"><%= link_to t('h.edit'), edit_admin_badge_path(badge) %></td>
   <td class="align-middle"><%= link_to t('h.delete'),
                                        admin_badge_path(badge),

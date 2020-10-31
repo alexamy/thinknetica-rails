@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_191425) do
   create_table "badges", force: :cascade do |t|
     t.string "name"
     t.string "filename"
-    t.string "rule"
+    t.integer "rule"
     t.string "condition"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -13,15 +13,22 @@ module Admin::BadgeHelper
     inline_svg_tag "badges/#{filename}.svg", options
   end
 
+  def condition(badge)
+    send(badge.rule, badge) || PLACEHOLDER
+  end
+
   def level(badge)
-    badge.level.positive? ? badge.level : PLACEHOLDER
+    return unless badge.rule == 'level'
+    badge.condition.to_i
   end
 
   def category(badge)
-    badge.category&.name || PLACEHOLDER
+    return unless badge.rule == 'category'
+    Category.find(badge.condition).name
   end
 
-  def test_first_try(badge)
-    badge.test_first_try&.title || PLACEHOLDER
+  def first_try(badge)
+    return unless badge.rule == 'first_try'
+    Test.find(badge.condition).title
   end
 end

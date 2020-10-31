@@ -26,9 +26,8 @@ en:
       badges_my: 'To your badges list'
       badge: 'Badge'
       name: 'Name'
-      level: 'Level'
-      category: 'Category'
-      test: 'Test'
+      rule: 'Rule'
+      condition: 'Condition'
     show:
       header: 'Your badges'
       badges_all: 'To badges list'
@@ -119,9 +118,10 @@ en:
       badge:
         name: 'Name'
         filename: 'Icon'
-        level: 'Level'
-        category: 'Category'
-        test_first_try: 'Test'
+        rules:
+          level: 'Level'
+          category: 'Category'
+          first_try: 'Test first try'
   helpers:
     submit:
       test:
