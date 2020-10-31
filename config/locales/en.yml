@@ -119,6 +119,7 @@ en:
         name: 'Name'
         filename: 'Icon'
         rule: 'Rule'
+        condition: 'Condition'
         level: 'Level'
         category: 'Category'
         test: 'Test first try'

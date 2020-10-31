@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin, @badge], local: true) do |form| %>
+<%= form_with(model: [:admin, @badge], local: true, id: 'badge_form') do |form| %>
   <%= render 'shared/errors', resource: @badge %>
 
   <div class="form-group">
@@ -17,19 +17,19 @@
     <%= form.select :rule, enum_for_select(Badge, :rule), {}, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :level %>
-    <%= form.number_field :condition, min: 0, class: 'form-control' %>
+  <div class="form-group d-none" id="group_level">
+    <%= form.label :condition, Badge.human_attribute_name(:level) %>
+    <%= form.number_field :condition, min: 1, class: 'form-control', disabled: true %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :category %>
-    <%= form.collection_select :condition, Category.all, :id, :name, { include_blank: true }, { class: 'form-control' } %>
+  <div class="form-group d-none" id="group_category">
+    <%= form.label :condition, Badge.human_attribute_name(:category) %>
+    <%= form.collection_select :condition, Category.all, :id, :name, {}, class: 'form-control', disabled: true %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :test %>
-    <%= form.collection_select :condition, Test.all, :id, :title, { include_blank: true }, { class: 'form-control' } %>
+  <div class="form-group d-none" id="group_first_try">
+    <%= form.label :condition, Badge.human_attribute_name(:test) %>
+    <%= form.collection_select :condition, Test.all, :id, :title, {}, class: 'form-control', disabled: true %>
   </div>
 
   <div class="form-group">

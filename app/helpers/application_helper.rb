@@ -13,6 +13,6 @@ module ApplicationHelper
 
   def enum_for_select(model, key)
     model.send(key.to_s.pluralize)
-      .map { |value, id| [model.send(:human_enum_name, key, value), value] }
+      .map { |value, _| [model.human_enum_name(key, value), value] }
   end
 end

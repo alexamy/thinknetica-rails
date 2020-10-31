@@ -119,6 +119,7 @@ ru:
         name: 'Название'
         filename: 'Иконка'
         rule: 'Правило'
+        condition: 'Условие'
         level: 'Уровень'
         category: 'Категория'
         test: 'Тест'
