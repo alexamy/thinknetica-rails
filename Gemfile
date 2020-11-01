@@ -43,6 +43,7 @@ group :development do
   gem "ruby-debug-ide", "~> 0.7.2"
   gem "debase", "~> 0.2.4"
   gem "letter_opener", "~> 1.7"
+  gem "bullet", "~> 6.1"
 end
 
 group :test do
@@ -73,3 +74,5 @@ gem "faraday", "~> 1.0"
 gem "octokit", "~> 4.18"
 
 gem "pg", "~> 1.2"
+
+gem "inline_svg", "~> 1.7"

@@ -1,0 +1,14 @@
+<h1><%= t('.header') %></h1>
+
+<%= link_to t('.new'), new_admin_badge_path %>
+
+<table class="table table-hover">
+  <tr>
+    <th><%= t('.badge') %></th>
+    <th><%= t('.name') %></th>
+    <th><%= t('.rule') %></th>
+    <th><%= t('.condition') %></th>
+    <th colspan=2><%= t('h.actions') %></th>
+  </tr>
+  <%= render @badges %>
+</table>

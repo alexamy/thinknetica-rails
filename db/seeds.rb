@@ -68,3 +68,19 @@ create_question test,
   { body: "Какова максимальная арность функций?" },
   { body: "1", correct: true },
   { body: "2", correct: false }
+
+# badges
+Badge.create(name: 'За тесты 1го уровня',
+             filename: '002-trophy',
+             rule: 0,
+             condition: 1)
+
+Badge.create(name: 'За тесты категории "Программирование"',
+             filename: '020-badge',
+             rule: 1,
+             condition: category.id)
+
+Badge.create(name: 'За прохождение теста "Haskell" с первого раза',
+             filename: '017-trophy',
+             rule: 2,
+             condition: test.id)

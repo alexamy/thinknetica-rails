@@ -25,7 +25,7 @@ class TestPassage < ApplicationRecord
   end
 
   def successful?
-    success_percent >= SUCCESSFUL_PERCENT_MARGIN
+    completed? && success_percent >= SUCCESSFUL_PERCENT_MARGIN
   end
 
   def with_time?

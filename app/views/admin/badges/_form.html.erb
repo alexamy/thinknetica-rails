@@ -1,0 +1,38 @@
+<%= form_with(model: [:admin, @badge], local: true, id: 'badge_form') do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <div class="form-group">
+    <%= form.label :filename %>
+    <div id="badge_icon" class="align-middle"></div>
+    <%= form.select :filename, badges_for_select, {}, { class: 'form-control' } %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rule %>
+    <%= form.select :rule, enum_for_select(Badge, :rule), {}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group d-none" id="group_level">
+    <%= form.label :condition, Badge.human_attribute_name(:level) %>
+    <%= form.number_field :condition, min: 1, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group d-none" id="group_category">
+    <%= form.label :condition, Badge.human_attribute_name(:category) %>
+    <%= form.collection_select :condition, Category.all, :id, :name, {}, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group d-none" id="group_first_try">
+    <%= form.label :condition, Badge.human_attribute_name(:test) %>
+    <%= form.collection_select :condition, Test.all, :id, :title, {}, class: 'form-control', disabled: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -9,6 +9,7 @@ ru:
     are_you_sure: 'Вы уверены?'
     send: 'Отправить'
     submit: 'Создать'
+    actions: 'Действия'
   tests:
     test:
       start: 'Начать'
@@ -19,6 +20,20 @@ ru:
       question_count: 'Количество вопросов'
       completion_time: 'Время завершения'
       actions: 'Действия'
+  badges:
+    index: &badges-index
+      header: 'Список бейджей'
+      badges_my: 'К списку ваших бейджей'
+      badge: 'Бейдж'
+      name: 'Название'
+      rule: 'Правило'
+      condition: 'Условие'
+    show:
+      header: 'Ваши бейджи'
+      badges_all: 'К списку всех бейджей'
+      badge: 'Бейдж'
+      name: 'Название'
+      count: 'Количество заработанных'
   admin:
     tests:
       new:
@@ -45,6 +60,14 @@ ru:
         header: 'Вопрос'
         body: 'Ответ:'
         correct: 'Правильный?'
+    badges:
+      index:
+        <<: *badges-index
+        new: 'Добавить новый'
+      new:
+        header: 'Новый бейдж'
+      edit:
+        header: 'Редактирование бейджа'
   test_passages:
     show:
       header: 'Прохождение теста'
@@ -77,6 +100,7 @@ ru:
       feedback: 'Обратная связь'
       question: 'Вопрос'
       answer: 'Ответ'
+      badge: 'Бейдж'
     attributes:
       test: &attributes-test
         title: 'Название'
@@ -91,6 +115,18 @@ ru:
       answer:
         body: 'Ответ'
         correct: 'Правильный?'
+      badge:
+        name: 'Название'
+        filename: 'Иконка'
+        rule: 'Правило'
+        condition: 'Условие'
+        level: 'Уровень'
+        category: 'Категория'
+        test: 'Тест'
+        rules:
+          level: 'Уровень'
+          category: 'Категория'
+          first_try: 'Тест с первой попытки'
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
